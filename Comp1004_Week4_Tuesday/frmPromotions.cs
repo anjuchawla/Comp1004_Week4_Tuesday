@@ -1,4 +1,12 @@
-﻿using System;
+﻿/*
+ * Name: Anju Chawla
+ * Date: September 27, 2016
+ * Purpose: Create an application for the fitness center.
+ * Allow user to sign in and select promotions. 
+ * Display the promotion details with appropriate images
+ * 
+ */
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
