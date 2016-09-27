@@ -43,15 +43,15 @@
             this.radMembership = new System.Windows.Forms.RadioButton();
             this.radPersonalTraining = new System.Windows.Forms.RadioButton();
             this.rtfWelcome = new System.Windows.Forms.RichTextBox();
-            this.txtPronotion = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.txtPromotion = new System.Windows.Forms.TextBox();
+            this.picDepartment = new System.Windows.Forms.PictureBox();
+            this.chkImageVisible = new System.Windows.Forms.CheckBox();
             this.btnSignIn = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.grpDepartment.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDepartment)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -205,34 +205,34 @@
             this.rtfWelcome.TabStop = false;
             this.rtfWelcome.Text = "";
             // 
-            // txtPronotion
+            // txtPromotion
             // 
-            this.txtPronotion.Location = new System.Drawing.Point(507, 352);
-            this.txtPronotion.Name = "txtPronotion";
-            this.txtPronotion.ReadOnly = true;
-            this.txtPronotion.Size = new System.Drawing.Size(264, 22);
-            this.txtPronotion.TabIndex = 14;
-            this.txtPronotion.TabStop = false;
+            this.txtPromotion.Location = new System.Drawing.Point(507, 352);
+            this.txtPromotion.Name = "txtPromotion";
+            this.txtPromotion.ReadOnly = true;
+            this.txtPromotion.Size = new System.Drawing.Size(264, 22);
+            this.txtPromotion.TabIndex = 14;
+            this.txtPromotion.TabStop = false;
             // 
-            // pictureBox1
+            // picDepartment
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(41, 404);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(268, 148);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
+            this.picDepartment.Location = new System.Drawing.Point(41, 404);
+            this.picDepartment.Name = "picDepartment";
+            this.picDepartment.Size = new System.Drawing.Size(268, 148);
+            this.picDepartment.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picDepartment.TabIndex = 10;
+            this.picDepartment.TabStop = false;
             // 
-            // checkBox1
+            // chkImageVisible
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(41, 585);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.checkBox1.Size = new System.Drawing.Size(113, 21);
-            this.checkBox1.TabIndex = 6;
-            this.checkBox1.Text = "Image &Visible";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chkImageVisible.AutoSize = true;
+            this.chkImageVisible.Location = new System.Drawing.Point(41, 585);
+            this.chkImageVisible.Name = "chkImageVisible";
+            this.chkImageVisible.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.chkImageVisible.Size = new System.Drawing.Size(113, 21);
+            this.chkImageVisible.TabIndex = 6;
+            this.chkImageVisible.Text = "Image &Visible";
+            this.chkImageVisible.UseVisualStyleBackColor = true;
             // 
             // btnSignIn
             // 
@@ -242,6 +242,7 @@
             this.btnSignIn.TabIndex = 4;
             this.btnSignIn.Text = "&Sign In";
             this.btnSignIn.UseVisualStyleBackColor = true;
+            this.btnSignIn.Click += new System.EventHandler(this.btnSignIn_Click);
             // 
             // btnPrint
             // 
@@ -254,6 +255,7 @@
             // 
             // btnClear
             // 
+            this.btnClear.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnClear.Location = new System.Drawing.Point(653, 437);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(118, 37);
@@ -272,16 +274,18 @@
             // 
             // frmPromotions
             // 
+            this.AcceptButton = this.btnSignIn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnClear;
             this.ClientSize = new System.Drawing.Size(798, 631);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.btnSignIn);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.txtPronotion);
+            this.Controls.Add(this.chkImageVisible);
+            this.Controls.Add(this.picDepartment);
+            this.Controls.Add(this.txtPromotion);
             this.Controls.Add(this.rtfWelcome);
             this.Controls.Add(this.grpDepartment);
             this.Controls.Add(this.mskMemberId);
@@ -296,9 +300,10 @@
             this.Name = "frmPromotions";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Promotions";
+            this.Load += new System.EventHandler(this.frmPromotions_Load);
             this.grpDepartment.ResumeLayout(false);
             this.grpDepartment.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDepartment)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -321,9 +326,9 @@
         private System.Windows.Forms.RadioButton radEquipmentAccessories;
         private System.Windows.Forms.RadioButton radClothing;
         private System.Windows.Forms.RichTextBox rtfWelcome;
-        private System.Windows.Forms.TextBox txtPronotion;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.TextBox txtPromotion;
+        private System.Windows.Forms.PictureBox picDepartment;
+        private System.Windows.Forms.CheckBox chkImageVisible;
         private System.Windows.Forms.Button btnSignIn;
         private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.Button btnClear;
