@@ -43,13 +43,83 @@ namespace Comp1004_Week4_Tuesday
             //show the controls that are required for input
             grpDepartment.Enabled = true;
             chkImageVisible.Visible = true;
-            picDepartment.Visible = true;
             txtPromotion.Visible = true;
 
             //disable sign in
             btnSignIn.Enabled = false;
 
 
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            //print the form
+            printForm1.Print();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            //close the form
+            this.Close(); 
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            //reset the form to its start default state
+            Application.Restart();
+        }
+
+        private void radClothing_CheckedChanged(object sender, EventArgs e)
+        {
+            //show the corresponding promotion and picture for clothing
+            txtPromotion.Text = "30% off clearance items";
+            picDepartment.Image = Comp1004_Week4_Tuesday.Properties.Resources.clothing;
+
+
+        }
+
+        private void radEquipmentAccessories_CheckedChanged(object sender, EventArgs e)
+        {
+            //show the corresponding promotion and picture for equipment/accessories
+            txtPromotion.Text = "30% off all equipment";
+            picDepartment.Image = Properties.Resources.equipment;
+        }
+
+        private void radJuiceBar_CheckedChanged(object sender, EventArgs e)
+        {
+            //show the corresponding promotion and picture for juice bar
+            txtPromotion.Text = "Free serving of WheatBerry shake";
+            picDepartment.Image = Properties.Resources.juice;
+        }
+
+        private void radMembership_CheckedChanged(object sender, EventArgs e)
+        {
+            //show the corresponding promotion and picture for membership
+            txtPromotion.Text = "Free personal trainer for the first month";
+            picDepartment.Image = Properties.Resources.member;
+        }
+
+        private void radPersonalTraining_CheckedChanged(object sender, EventArgs e)
+        {
+            //show the corresponding promotion and picture for personal training
+            txtPromotion.Text = "3 free memberships with membership renewal";
+            picDepartment.Image = Properties.Resources.training;
+        }
+
+        private void chkImageVisible_CheckedChanged(object sender, EventArgs e)
+        {
+            //picture displayed if image visible is checked
+            /*
+            if (chkImageVisible.Checked)  //==true
+            {
+                picDepartment.Visible = true;
+            }
+            else
+            {
+                picDepartment.Visible = false;
+            }
+            */
+            picDepartment.Visible = chkImageVisible.Checked;
         }
     }
 }
